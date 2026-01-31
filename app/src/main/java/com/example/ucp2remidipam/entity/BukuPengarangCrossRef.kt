@@ -1,4 +1,4 @@
-package com.example.remedialucp2.data.entity
+package com.example.ucp2remidipam.data.entity
 
 import androidx.room.Entity
 import androidx.room.Index
