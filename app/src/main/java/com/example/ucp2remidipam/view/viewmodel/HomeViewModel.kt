@@ -1,4 +1,4 @@
-package com.example.ucp2remidipam.view.viewmodel
+package com.example.ucp2remidipam.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
