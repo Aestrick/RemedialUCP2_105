@@ -9,9 +9,10 @@ import com.example.ucp2remidipam.PerpusApp
 object PenyediaViewModel {
     val Factory = viewModelFactory {
         initializer {
-            HomeViewModel(
-                aplikasiPerpus().container.repositoryPerpus
-            )
+            HomeViewModel(aplikasiPerpus().container.repositoryPerpus)
+        }
+        initializer {
+            EntryViewModel(aplikasiPerpus().container.repositoryPerpus)
         }
     }
 }
