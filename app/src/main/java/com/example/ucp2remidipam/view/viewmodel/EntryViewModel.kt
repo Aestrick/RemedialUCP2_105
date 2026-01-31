@@ -12,7 +12,6 @@ class EntryViewModel(private val repositoryPerpus: RepositoryPerpus) : ViewModel
     var uiStateBuku by mutableStateOf(UiStateBuku())
         private set
 
-    // Update state saat user ngetik
     fun updateUiState(detailBuku: DetailBuku) {
         uiStateBuku = UiStateBuku(detailBuku = detailBuku, isEntryValid = validasiInput(detailBuku))
     }
