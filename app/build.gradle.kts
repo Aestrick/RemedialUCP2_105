@@ -1,17 +1,17 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
-    // WAJIB: Tambahin ini biar Room jalan
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
 }
 
 android {
-    namespace = "com.example.remedialucp2" // Sesuaikan nama projectmu
+    namespace = "com.example.remedialucp2"
     compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.remedialucp2"
-        minSdk = 24 // Minimal segini buat Room modern
+        minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -52,7 +52,6 @@ android {
 }
 
 dependencies {
-    // Standar Android
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -61,17 +60,10 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-
-    // --- BAGIAN INI YANG PENTING BUAT SOAL ---
-    // Room Database (Buat ngerjain Relasi Many-to-Many & Hierarki)
     implementation(libs.androidx.room.runtime)
-    implementation(libs.androidx.room.ktx) // Support Coroutines (Asynchronous)
-    ksp(libs.androidx.room.compiler) // Compiler database
-
-    // Navigation
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
     implementation(libs.androidx.navigation.compose)
-
-    // Testing (Biarin aja default)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
